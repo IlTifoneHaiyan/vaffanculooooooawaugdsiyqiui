@@ -174,7 +174,7 @@ var tick = (elapsedTime, multiplier) => {
     q = q + vq1 * vq2 * dt;
 
     if (dimension.level > 0)
-        r = r + vr1 * vr2 * dt / BigNumber.THOUSAND;
+        r = r + vr1 * vr2 * dt;
     else
         r = BigNumber.ONE;
 
@@ -250,7 +250,7 @@ var getSecondaryEquation = () => {
     result += "\\begin{matrix}";
     result += theory.latexSymbol;
     result += "=\\max\\rho,&\\dot{q}=q_1q_2";
-    if (dimension.level > 0) result += ",&\\dot{r}=r_1r_2/1000";
+    if (dimension.level > 0) result += ",&\\dot{r}=r_1r_2";
     result += "\\end{matrix}";
 
     return result;
@@ -269,8 +269,8 @@ var getTertiaryEquation = () => {
     return result;
 }
 
-var getPublicationMultiplier = (tau) => tau.pow(0.196) / 50;
-var getPublicationMultiplierFormula = (symbol) => "\\frac{{" + symbol + "}^{0.196}}{50}";
+var getPublicationMultiplier = (tau) => tau.pow(0.41);
+var getPublicationMultiplierFormula = (symbol) => "{" + symbol + "}^{0.411}";
 var getTau = () => currency.value;
 var get2DGraphValue = () => currency.value.sign * (BigNumber.ONE + currency.value.abs()).log10().toNumber();
 
