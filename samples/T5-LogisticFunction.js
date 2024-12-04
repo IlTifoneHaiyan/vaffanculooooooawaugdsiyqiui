@@ -165,10 +165,10 @@ var getPublicationMultiplierFormula = (symbol) => "{" + symbol + "}^{0.159}";
 var getTau = () => currency.value;
 var get2DGraphValue = () => currency.value.sign * (BigNumber.ONE + currency.value.abs()).log10().toNumber();
 
-var getQ1 = (level) => Utils.getStepwisePowerSum(level, 2, 10, 0);
+var getQ1 = (level) => Utils.getStepwisePowerSum(level, 4, 10, 0);
 var getQ2 = (level) => BigNumber.TWO.pow(level);
-var getC1 = (level) => Utils.getStepwisePowerSum(level, 2, 10, 1);
-var getC2 = (level) => BigNumber.TWO.pow(level);
+var getC1 = (level) => Utils.getStepwisePowerSum(level, 11, 10, 1);
+var getC2 = (level) => BigNumber.TEN.pow(level);
 var getC3 = (level) => BigNumber.TEN.pow(level);
 var getQ1Exp = (level) => BigNumber.from(1 + level * 0.05);
 var getC3Exp = (level) => BigNumber.from(1 + level * 0.05);
