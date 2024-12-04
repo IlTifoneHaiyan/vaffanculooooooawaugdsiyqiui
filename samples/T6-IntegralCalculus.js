@@ -28,7 +28,7 @@ var init = () => {
     {
         let getDesc = (level) => "q_1=" + getQ1(level).toString(0);
         let getInfo = (level) => "q_1=" + getQ1(level).toString(0);
-        q1 = theory.createUpgrade(0, currency, new FirstFreeCost(new ExponentialCost(15, Math.log2(3))));
+        q1 = theory.createUpgrade(0, currency, new FirstFreeCost(new ExponentialCost(1, Math.log2(2.5))));
         q1.getDescription = (amount) => Utils.getMath(getDesc(q1.level));
         q1.getInfo = (amount) => Utils.getMathTo(getInfo(q1.level), getInfo(q1.level + amount));
     }
@@ -37,7 +37,7 @@ var init = () => {
     {
         let getDesc = (level) => "q_2=2^{" + level + "}";
         let getInfo = (level) => "q_2=" + getQ2(level).toString(0);
-        q2 = theory.createUpgrade(1, currency, new ExponentialCost(500, Math.log2(100)));
+        q2 = theory.createUpgrade(1, currency, new ExponentialCost(500, Math.log2(10)));
         q2.getDescription = (amount) => Utils.getMath(getDesc(q2.level));
         q2.getInfo = (amount) => Utils.getMathTo(getInfo(q2.level), getInfo(q2.level + amount));
     }
@@ -46,7 +46,7 @@ var init = () => {
     {
         let getDesc = (level) => "r_1=" + getR1(level).toString(0);
         let getInfo = (level) => "r_1=" + getR1(level).toString(0);
-        r1 = theory.createUpgrade(2, currency, new ExponentialCost(1e25, Math.log2(1e5)));
+        r1 = theory.createUpgrade(2, currency, new ExponentialCost(1e25, Math.log2(5)));
         r1.getDescription = (amount) => Utils.getMath(getDesc(r1.level));
         r1.getInfo = (amount) => Utils.getMathTo(getInfo(r1.level), getInfo(r1.level + amount));
     }
@@ -55,7 +55,7 @@ var init = () => {
     {
         let getDesc = (level) => "r_2=2^{" + level + "}";
         let getInfo = (level) => "r_2=" + getR2(level).toString(0);
-        r2 = theory.createUpgrade(3, currency, new ExponentialCost(1e30, Math.log2(1e10)));
+        r2 = theory.createUpgrade(3, currency, new ExponentialCost(1e30, Math.log2(10)));
         r2.getDescription = (amount) => Utils.getMath(getDesc(r2.level));
         r2.getInfo = (amount) => Utils.getMathTo(getInfo(r2.level), getInfo(r2.level + amount));
     }
