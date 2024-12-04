@@ -16,7 +16,7 @@ var equation, c3Exp, c4Exp, c5Exp;
 
 var systems = [(v) => new Vector3(10 * (v.y - v.x), v.x * (28 - v.z) - v.y, v.x * v.y - 8 * v.z / 3.0), // Lorenz
                (v) => new Vector3(10 * (40 * (v.y - v.x)), 10 * (-12 * v.x - v.x * v.z + 28 * v.y), 10 * (v.x * v.y - 3 * v.z)), // Chen
-               (v) => new Vector3(500 * (-v.y - v.z), 500 * (v.x + 0.1 * v.y), 500 * (0.1 + v.z * (v.x - 14)))]; // Rossler
+               (v) => new Vector3(500 * (-v.y - v.z), 500 * (v.x + 0.1 * v.y), 500 * (0.1 + v.z * (v.x - 0.1)))]; // Rossler
 
 var bounds = [[new Vector3(0, 0, 24.5), new Vector3(-20, -27, 1), new Vector3(20, 27, 48)],
               [new Vector3(0.5, 1, 20.5), new Vector3(-23, -25, 1), new Vector3(24, 27, 40)],
